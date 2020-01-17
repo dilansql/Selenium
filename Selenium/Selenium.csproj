@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PhantomJS" Version="2.1.1" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="79.0.3945.3600" />
+    <PackageReference Include="Terminal.Gui" Version="0.24.0" />
+    <PackageReference Include="Terminal.Gui.Forms" Version="0.1.0" />
   </ItemGroup>
 
 </Project>
