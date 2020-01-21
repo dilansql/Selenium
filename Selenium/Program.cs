@@ -7,28 +7,16 @@ namespace Selenium
 {
     class Program
     {
-        private IWebDriver _webDriver = new ChromeDriver();
-        private IWebElement _webElement;
-
-        public async event WhenScreenChanges(object run, EventArgs e);
-
+        private static IWebDriver _webDriver = new ChromeDriver();
+        private static IWebElement _webElement;
+        private static ChromeDriver ChromeDriver { get; set; } = new ChromeDriver();
+        private static WebDriverWait Wait { get; set; } = new WebDriverWait(ChromeDriver, new TimeSpan(50));
+        private ChromeWebElement ChromeWebElement {get; set;} = new ChromeWebElement(ChromeDriver, "test");
         public void Main(string[] args)
         {
-            var chromeDriver = new ChromeDriver();
-            var chromeWebElement = new ChromeWebElement(chromeDriver, "test");
-
-
-
             INavigation navigation = _webDriver.Navigate();
-            navigation.Back();
-
-
-
-        }
-
-        public async string WhenScreenChanges(object run, EventArgs)
-        {
-
+            navigation.GoToUrl("https://digital-christmas-card.ballatoilet.repl.co/");
+            var submitButton = ChromeDriver.FindElementById("SubmitButton");
         }
     }
 }
